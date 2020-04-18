@@ -84,42 +84,42 @@ def get_optimizer(optim_name, lr, parameters, weight_decay = 0, momentum = 0.9):
     return opt
 
 def save_checkpoint(args, encoder, decoder, enc_opt, dec_opt):
-    torch.save(encoder.state_dict(), os.path.join('../models',args.model_name,'encoder.pt'))
-    torch.save(decoder.state_dict(), os.path.join('../models',args.model_name,'decoder.pt'))
-    torch.save(enc_opt.state_dict(), os.path.join('../models',args.model_name,'enc_opt.pt'))
-    torch.save(dec_opt.state_dict(), os.path.join('../models',args.model_name,'dec_opt.pt'))
+    torch.save(encoder.state_dict(), os.path.join('/content/rvos/models',args.model_name,'encoder.pt'))
+    torch.save(decoder.state_dict(), os.path.join('/content/rvos/models',args.model_name,'decoder.pt'))
+    torch.save(enc_opt.state_dict(), os.path.join('/content/rvos/models',args.model_name,'enc_opt.pt'))
+    torch.save(dec_opt.state_dict(), os.path.join('/content/rvos/models',args.model_name,'dec_opt.pt'))
     # save parameters for future use
-    pickle.dump(args, open(os.path.join('../models',args.model_name,'args.pkl'),'wb'))
+    pickle.dump(args, open(os.path.join('/content/rvos/models',args.model_name,'args.pkl'),'wb'))
     
 def save_checkpoint_prev_mask(args, encoder, decoder, enc_opt, dec_opt):
-    torch.save(encoder.state_dict(), os.path.join('../models',args.model_name + '_prev_mask','encoder.pt'))
-    torch.save(decoder.state_dict(), os.path.join('../models',args.model_name + '_prev_mask','decoder.pt'))
-    torch.save(enc_opt.state_dict(), os.path.join('../models',args.model_name + '_prev_mask','enc_opt.pt'))
-    torch.save(dec_opt.state_dict(), os.path.join('../models',args.model_name + '_prev_mask','dec_opt.pt'))
+    torch.save(encoder.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_mask','encoder.pt'))
+    torch.save(decoder.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_mask','decoder.pt'))
+    torch.save(enc_opt.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_mask','enc_opt.pt'))
+    torch.save(dec_opt.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_mask','dec_opt.pt'))
     # save parameters for future use
-    pickle.dump(args, open(os.path.join('../models',args.model_name + '_prev_mask','args.pkl'),'wb'))
+    pickle.dump(args, open(os.path.join('/content/rvos/models',args.model_name + '_prev_mask','args.pkl'),'wb'))
     
 def save_checkpoint_prev_inference_mask(args, encoder, decoder, enc_opt, dec_opt):
-    torch.save(encoder.state_dict(), os.path.join('../models',args.model_name + '_prev_inference_mask','encoder.pt'))
-    torch.save(decoder.state_dict(), os.path.join('../models',args.model_name + '_prev_inference_mask','decoder.pt'))
-    torch.save(enc_opt.state_dict(), os.path.join('../models',args.model_name + '_prev_inference_mask','enc_opt.pt'))
-    torch.save(dec_opt.state_dict(), os.path.join('../models',args.model_name + '_prev_inference_mask','dec_opt.pt'))
+    torch.save(encoder.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_inference_mask','encoder.pt'))
+    torch.save(decoder.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_inference_mask','decoder.pt'))
+    torch.save(enc_opt.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_inference_mask','enc_opt.pt'))
+    torch.save(dec_opt.state_dict(), os.path.join('/content/rvos/models',args.model_name + '_prev_inference_mask','dec_opt.pt'))
     # save parameters for future use
-    pickle.dump(args, open(os.path.join('../models',args.model_name + '_prev_inference_mask','args.pkl'),'wb'))
+    pickle.dump(args, open(os.path.join('/content/rvos/models',args.model_name + '_prev_inference_mask','args.pkl'),'wb'))
 
 def load_checkpoint(model_name,use_gpu=True):
     if use_gpu:
-        encoder_dict = torch.load(os.path.join('../models',model_name,'encoder.pt'))
-        decoder_dict = torch.load(os.path.join('../models',model_name,'decoder.pt'))
-        enc_opt_dict = torch.load(os.path.join('../models',model_name,'enc_opt.pt'))
-        dec_opt_dict = torch.load(os.path.join('../models',model_name,'dec_opt.pt'))
+        encoder_dict = torch.load(os.path.join('/content/rvos/models',model_name,'encoder.pt'))
+        decoder_dict = torch.load(os.path.join('/content/rvos/models',model_name,'decoder.pt'))
+        enc_opt_dict = torch.load(os.path.join('/content/rvos/models',model_name,'enc_opt.pt'))
+        dec_opt_dict = torch.load(os.path.join('/content/rvos/models',model_name,'dec_opt.pt'))
     else:
-        encoder_dict = torch.load(os.path.join('../models',model_name,'encoder.pt'), map_location=lambda storage, location: storage)
-        decoder_dict = torch.load(os.path.join('../models',model_name,'decoder.pt'), map_location=lambda storage, location: storage)
-        enc_opt_dict = torch.load(os.path.join('../models',model_name,'enc_opt.pt'), map_location=lambda storage, location: storage)
-        dec_opt_dict = torch.load(os.path.join('../models',model_name,'dec_opt.pt'), map_location=lambda storage, location: storage)
+        encoder_dict = torch.load(os.path.join('/content/rvos/models',model_name,'encoder.pt'), map_location=lambda storage, location: storage)
+        decoder_dict = torch.load(os.path.join('/content/rvos/models',model_name,'decoder.pt'), map_location=lambda storage, location: storage)
+        enc_opt_dict = torch.load(os.path.join('/content/rvos/models',model_name,'enc_opt.pt'), map_location=lambda storage, location: storage)
+        dec_opt_dict = torch.load(os.path.join('/content/rvos/models',model_name,'dec_opt.pt'), map_location=lambda storage, location: storage)
     # save parameters for future use
-    args = pickle.load(open(os.path.join('../models',model_name,'args.pkl'),'rb'))
+    args = pickle.load(open(os.path.join('/content/rvos/models',model_name,'args.pkl'),'rb'))
 
     return encoder_dict, decoder_dict, enc_opt_dict, dec_opt_dict, args
 
