@@ -113,7 +113,7 @@ def get_parser():
     parser.add_argument('-num_classes', dest='num_classes', default = 21, type=int)
     parser.add_argument('-dataset', dest='dataset', default = 'davis2017',choices=['davis2017', 'youtube'])
     parser.add_argument('-youtube_dir', dest='youtube_dir',
-                        default='../../databases/YouTubeVOS/')
+                        default='/content/drive/Shared drives/CIS 599 Independent Study/databases/YouTubeVOS/')
 
     # testing
     parser.add_argument('-eval_split',dest='eval_split', default='test')
@@ -128,8 +128,8 @@ def get_parser():
     parser.set_defaults(use_gt_masks=False)
 
     # demo
-    parser.add_argument('-frames_path', dest='frames_path', default='../../databases/DAVIS2017/JPEGImages/480p/tennis-vest')
-    parser.add_argument('-mask_path', dest='init_mask_path', default='../../databases/DAVIS2017/Annotations/480p/tennis-vest/00000.png')
+    parser.add_argument('-frames_path', dest='frames_path', default='/content/drive/Shared drives/CIS 599 Independent Study/databases/DAVIS2017/JPEGImages/480p/tennis-vest')
+    parser.add_argument('-mask_path', dest='init_mask_path', default='/content/drive/Shared drives/CIS 599 Independent Study/databases/DAVIS2017/Annotations/480p/tennis-vest/00000.png')
     parser.add_argument('-results_path', dest='results_path', default=None)
     parser.add_argument('--zero_shot', dest='zero_shot', action='store_true')
     return parser
