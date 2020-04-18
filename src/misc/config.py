@@ -49,10 +49,15 @@ __C.PHASE = phase.VAL
 __C.MULTIOBJECT = True
 
 # Root folder of project
-__C.PATH.ROOT = osp.abspath('../../rvos/')
+# __C.PATH.ROOT = osp.abspath('../../rvos/')
+__C.PATH.ROOT = osp.abspath('/content/rvos/')
 
 # Data folder
-__C.PATH.DATA = osp.abspath('../../databases/DAVIS2017/')
+# __C.PATH.DATA = osp.abspath('../../databases/DAVIS2017/')
+__C.PATH.DATA = osp.abspath('/content/drive/Shared drives/CIS 599 Independent Study/')
+
+# /content/drive/Shared drives/CIS 599 Independent Study/
+# /content/rvos/
 
 # Path to input images
 __C.PATH.SEQUENCES = osp.join(__C.PATH.DATA,"JPEGImages",__C.RESOLUTION)
