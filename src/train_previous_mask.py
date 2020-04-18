@@ -176,7 +176,7 @@ def runIter(args, encoder, decoder, x, y_mask, sw_mask,
 def trainIters(args):
 
     epoch_resume = 0
-    model_dir = os.path.join('../models/', args.model_name + '_prev_mask')
+    model_dir = os.path.join('/content/rvos/models/', args.model_name + '_prev_mask')
 
     if args.resume:
         # will resume training the model with name args.model_name
