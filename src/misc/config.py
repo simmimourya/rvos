@@ -54,7 +54,7 @@ __C.PATH.ROOT = osp.abspath('/content/rvos/')
 
 # Data folder
 # __C.PATH.DATA = osp.abspath('../../databases/DAVIS2017/')
-__C.PATH.DATA = osp.abspath('/content/drive/Shared drives/CIS 599 Independent Study/')
+__C.PATH.DATA = osp.abspath('/content/drive/Shared drives/CIS 599 Independent Study/databases/DAVIS2017/')
 
 # /content/drive/Shared drives/CIS 599 Independent Study/
 # /content/rvos/
