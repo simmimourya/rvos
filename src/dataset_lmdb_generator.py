@@ -24,7 +24,10 @@ class LMDBGenerator:
 
             print( "Generating lmdb for: " + folder_dir)
             with env.begin(write=True) as txn:
-                txn.put(d.encode('ascii'), files_str_vec.encode())
+#                 txn.put(d.encode('ascii'), files_str_vec.encode())
+                  txn.put(d.encode(), files_str_vec.encode())
+
+
 
 
 if __name__ == "__main__":
