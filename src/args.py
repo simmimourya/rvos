@@ -97,7 +97,7 @@ def get_parser():
     parser.set_defaults(use_gpu=True)
     parser.add_argument('-ngpus', dest='ngpus', default=1,type=int)
 
-    parser.add_argument('-base_model', dest='base_model', default = 'resnet101',
+    parser.add_argument('-base_model', dest='base_model', default = 'resnet34',
                         choices=['resnet101','resnet50','resnet34','vgg16'])
     parser.add_argument('-skip_mode', dest='skip_mode', default = 'concat',
                         choices=['sum','concat','mul','none'])
