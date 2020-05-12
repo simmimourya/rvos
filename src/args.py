@@ -128,8 +128,8 @@ def get_parser():
     parser.set_defaults(use_gt_masks=False)
 
     # demo
-    parser.add_argument('-frames_path', dest='frames_path', default='/content/drive/Shared drives/CIS 599 Independent Study/databases/DAVIS2017/JPEGImages/480p/tennis-vest')
-    parser.add_argument('-mask_path', dest='init_mask_path', default='/content/drive/Shared drives/CIS 599 Independent Study/databases/DAVIS2017/Annotations/480p/tennis-vest/00000.png')
+    parser.add_argument('-frames_path', dest='frames_path', default='/content/drive/My Drive/DAVIS 2016/DAVIS/JPEGImages/480p/WAD')
+    parser.add_argument('-mask_path', dest='init_mask_path', default='/content/drive/My Drive/DAVIS 2016/DAVIS/Annotations/480p/WAD/170927_063847007_Camera_6_instanceIds.pngw')
     parser.add_argument('-results_path', dest='results_path', default=None)
     parser.add_argument('--zero_shot', dest='zero_shot', action='store_true')
     return parser
